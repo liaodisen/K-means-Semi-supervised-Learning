@@ -4,15 +4,13 @@
 # python train.py experiment=example
 
 defaults:
-  - override /data: mnist
-  - override /model: mnist
+  - override /data: cifar
+  - override /model: cifar
   - override /callbacks: default
   - override /trainer: default
 
 # all parameters below will be merged with parameters from default configurations set above
 # this allows you to overwrite only specified parameters
-
-tags: ["mnist", "simple_dense_net"]
 
 seed: 12345
 
@@ -34,8 +32,3 @@ data:
   batch_size: 64
 
 logger:
-  wandb:
-    tags: ${tags}
-    group: "mnist"
-  aim:
-    experiment: "mnist"
